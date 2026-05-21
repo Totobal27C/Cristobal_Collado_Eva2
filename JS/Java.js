@@ -280,7 +280,7 @@
 
             localStorage.setItem('username', username);
             localStorage.setItem('email', email);
-            window.location.href = 'index.html';
+            window.location.href = 'espartano.html';
         });
     }
 
