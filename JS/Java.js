@@ -12,6 +12,8 @@
         el.classList.add('show');
     }
 
+
+    
     function limpiarError(id) {
         const el = document.getElementById(id);
         if (!el) return;
