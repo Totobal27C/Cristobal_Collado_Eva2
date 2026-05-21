@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <div class="container">
             <div class="brand">
                 <div class="logo" aria-hidden="true">
@@ -22,7 +22,8 @@
                         <h1 style="margin:0;font-size:1.1rem">Club Jose Andrade</h1>
                         <span class="badge">Fundado 15-01-1947</span>
                     </div>
-                    <div style="font-size:.9rem;color:rgba(255,255,255,.9)">Ciudad Esparta • Estadio: Coloso Verde •
+                    <div style="font-size:.9rem;color:rgba(255,255,255,.9)">Santiago • Estadio: Puente Alto Armador
+                        Donoso •
                         Capacidad: 42,000</div>
                 </div>
             </div>
@@ -34,10 +35,32 @@
                 <a href="#noticias">Noticias</a>
                 <a href="programacion-campeonato.html">Programación del Campeonado</a>
             </nav>
+            <div id="user-panel">
+                <span id="greeting"></span>
+                <div class="panel-buttons">
+                    <a href="login.html">Login</a>
+                    <a href="nuevo_usuario.html">Nuevo Usuario</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+            </div>
         </div>
     </header>
 
     <main class="container">
+        <section id="galeria" class="carousel" aria-label="Galería de imágenes">
+            <div class="carousel-slides">
+                <div class="carousel-slide"><img src="Imagenes/estadio-municipal.jpg" alt=""></div>
+                <div class="carousel-slide"><img src = "Imagenes/images.jpg" alt=""></div>
+                <div class="carousel-slide"><img src = "Imagenes/JOSE-ANDRADE.jpg" alt=""></div>
+            </div>
+            <button class="carousel-button prev" aria-label="Anterior">&#8249;</button>
+            <button class="carousel-button next" aria-label="Siguiente">&#8250;</button>
+            <div class="carousel-indicators">
+                <button type="button" data-slide="0" class="active"></button>
+                <button type="button" data-slide="1"></button>
+                <button type="button" data-slide="2"></button>
+            </div>
+        </section>
         <section id="resumen" class="hero" aria-labelledby="resumen-titulo">
             <div class="team-info">
                 <h2 id="resumen-titulo" class="team-title">Jose Andrade FC <span
@@ -242,30 +265,12 @@
             </div>
         </section>
 
-        <section id="galeria">
-            <h3>Galería</h3>
-            <div class="card" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.5rem">
-                <div style="height:90px;background:linear-gradient(135deg,#cfe,#9bd);border-radius:6px"></div>
-                <div style="height:90px;background:linear-gradient(135deg,#fed,#fbb);border-radius:6px"></div>
-                <div style="height:90px;background:linear-gradient(135deg,#dfd,#bfb);border-radius:6px"></div>
-            </div>
-        </section>
-
         <footer>
             <div class="pos">© Club Espartano · Todos los derechos reservados · contacto@espartano.fc</div>
         </footer>
     </main>
 
-    <script>
-        // Pequeña accesibilidad: focus a secciones desde nav (smooth)
-        document.querySelectorAll('nav a').forEach(a => {
-            a.addEventListener('click', e => {
-                const id = a.getAttribute('href').slice(1);
-                const el = document.getElementById(id);
-                if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); history.replaceState(null, '', '#' + id); }
-            });
-        });
-    </script>
+    <script src="js/Java.js"></script>
 </body>
 
 </html>

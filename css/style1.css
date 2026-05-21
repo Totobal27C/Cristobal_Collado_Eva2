@@ -1,9 +1,14 @@
 :root {
-        --primary: #1E60D6; /* azul metálico */
-        --dark: #071733; /* azul muy oscuro */
-        --muted: #6e8aa6; /* gris azulado */
-        --card: #f4fbff; /* blanco hielo */
-        --bg: #eaf6ff; /* fondo suave azul hielo */
+        --primary: #1E60D6;
+        /* azul metálico */
+        --dark: #071733;
+        /* azul muy oscuro */
+        --muted: #6e8aa6;
+        /* gris azulado */
+        --card: #f4fbff;
+        /* blanco hielo */
+        --bg: #eaf6ff;
+        /* fondo suave azul hielo */
 }
 
 * {
@@ -84,7 +89,7 @@ main {
 }
 
 .badge {
-        background: rgba(255,255,255,0.12);
+        background: rgba(255, 255, 255, 0.12);
         color: #fff;
         border-radius: 6px;
         padding: .2rem .5rem;
@@ -114,7 +119,7 @@ main {
         border-radius: 6px;
         text-decoration: none;
         font-weight: 600;
-        box-shadow: 0 6px 16px rgba(30,96,214,0.12);
+        box-shadow: 0 6px 16px rgba(30, 96, 214, 0.12);
 }
 
 section {
@@ -134,7 +139,7 @@ section {
         background: var(--card);
         padding: .8rem;
         border-radius: 8px;
-        box-shadow: 0 6px 20px rgba(4,18,40,0.04);
+        box-shadow: 0 6px 20px rgba(4, 18, 40, 0.04);
 }
 
 .players {
@@ -152,26 +157,27 @@ section {
         display: flex;
         gap: .8rem;
         align-items: center;
-        box-shadow: 0 6px 18px rgba(14,34,70,0.06);
+        box-shadow: 0 6px 18px rgba(14, 34, 70, 0.06);
         transition: transform .18s ease, box-shadow .18s ease;
 }
+
 .player:hover {
         transform: translateY(-4px);
-        box-shadow: 0 12px 30px rgba(2,12,19,0.09);
+        box-shadow: 0 12px 30px rgba(2, 12, 19, 0.09);
 }
 
 .avatar {
         width: 72px;
         height: 72px;
         border-radius: 10px;
-        background: linear-gradient(135deg, rgba(30,96,214,0.12), rgba(255,255,255,0.6));
+        background: linear-gradient(135deg, rgba(30, 96, 214, 0.12), rgba(255, 255, 255, 0.6));
         display: grid;
         place-items: center;
         font-weight: 800;
         color: var(--dark);
         font-size: 1.05rem;
         flex-shrink: 0;
-        border: 1px solid rgba(30,96,214,0.06);
+        border: 1px solid rgba(30, 96, 214, 0.06);
 }
 
 .player-info {
@@ -244,4 +250,134 @@ footer {
         height: 50px;
         border-radius: 30%;
 
+}
+
+header.header {
+        position: relative;
+}
+
+#user-panel {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.6rem;
+        z-index: 10;
+}
+
+#user-panel #greeting {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #fff;
+}
+
+#user-panel .panel-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 0.4rem;
+}
+
+#user-panel .panel-buttons a {
+        display: inline-block;
+        padding: 0.45rem 0.75rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        font-size: 0.85rem;
+}
+
+#user-panel .panel-buttons a:hover {
+        background: rgba(255, 255, 255, 0.2);
+}
+
+.carousel {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 2rem;
+}
+
+.carousel-slides {
+        display: flex;
+        transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+        min-width: 100%;
+        height: 260px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 700;
+        position: relative;
+}
+
+.carousel-slide:nth-child(1) {
+        background: linear-gradient(135deg, #0a3, #3bd);
+}
+
+.carousel-slide:nth-child(2) {
+        background: linear-gradient(135deg, #f60, #f93);
+}
+
+.carousel-slide:nth-child(3) {
+        background: linear-gradient(135deg, #36c, #69f);
+}
+
+.carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.35);
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+.carousel-button:hover {
+        background: rgba(0, 0, 0, 0.55);
+}
+
+.carousel-button.prev {
+        left: 1rem;
+}
+
+.carousel-button.next {
+        right: 1rem;
+}
+
+.carousel-indicators {
+        position: absolute;
+        bottom: 0.8rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 0.5rem;
+}
+
+.carousel-indicators button {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(255, 255, 255, 0.6);
+        cursor: pointer;
+}
+
+.carousel-indicators button.active {
+        background: #fff;
 }
