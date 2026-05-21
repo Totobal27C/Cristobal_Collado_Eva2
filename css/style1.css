@@ -161,6 +161,25 @@ section {
         transition: transform .18s ease, box-shadow .18s ease;
 }
 
+
+
+/* Botón para controlar el audio de fondo (aparece si autoplay está bloqueado) */
+.audio-toggle {
+         position: fixed;
+         left: 12px;
+         bottom: 12px;
+         background: var(--primary);
+         color: #fff;
+         border: none;
+         padding: .5rem .6rem;
+         border-radius: 10px;
+         box-shadow: 0 8px 20px rgba(14,34,70,0.12);
+         font-size: 1rem;
+         display: none;
+         z-index: 9999;
+         cursor: pointer;
+}
+
 .player:hover {
         transform: translateY(-4px);
         box-shadow: 0 12px 30px rgba(2, 12, 19, 0.09);
