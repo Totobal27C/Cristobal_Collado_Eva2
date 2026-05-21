@@ -112,7 +112,7 @@
             }
         });
 
-        passwordConfirmInput.addEventListener('blur', validatePasswordConfirm);
+        passwordConfirmInput.addEventListener('blur', validarConfirmacionContrasena);
         passwordConfirmInput.addEventListener('input', function () {
             if (this.value.trim() === passwordInput.value.trim() && this.value.trim()) {
                 limpiarError(this.id + '-error');
