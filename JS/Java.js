@@ -312,7 +312,7 @@
 
         function reiniciarTemporizador() {
             if (intervalId) clearInterval(intervalId);
-            intervalId = setInterval(goNext, 2000);
+            intervalId = setInterval(irSiguiente, 2000);
         }
 
         if (prevButton) {
