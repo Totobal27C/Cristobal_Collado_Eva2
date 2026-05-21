@@ -142,6 +142,54 @@ section {
         box-shadow: 0 6px 20px rgba(4, 18, 40, 0.04);
 }
 
+.card form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+}
+
+.card form h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: #111;
+}
+
+.card form input,
+.card form textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid rgba(30, 96, 214, 0.16);
+        border-radius: 10px;
+        background: #fff;
+        color: #111;
+        font-size: 1rem;
+        box-sizing: border-box;
+}
+
+.card form textarea {
+        min-height: 180px;
+        resize: vertical;
+}
+
+.card form button {
+        border: none;
+        background: var(--primary);
+        color: #fff;
+        padding: 12px 16px;
+        border-radius: 10px;
+        font-weight: 700;
+        cursor: pointer;
+}
+
+.card form button:hover {
+        background: #154ec1;
+}
+
+#registroForm p {
+        margin: 0;
+        color: var(--dark);
+}
+
 .players {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
