@@ -178,112 +178,6 @@
         if (savedEmail) emailInput.value = savedEmail;
     }
 
-    function iniciarFormularioContacto() {
-        const form = document.getElementById('contactForm');
-        if (!form) return;
-
-        const usernameInput = document.getElementById('username');
-        const emailInput = document.getElementById('email');
-        const messageInput = document.getElementById('message');
-
-        function mostrarErrorContacto(id, text) {
-            const el = document.getElementById(id);
-            if (!el) return;
-            el.textContent = text;
-            el.classList.add('show');
-        }
-
-        function limpiarErrorContacto(id) {
-            const el = document.getElementById(id);
-            if (!el) return;
-            el.classList.remove('show');
-        }
-
-        emailInput.addEventListener('blur', function () {
-            const email = this.value.trim();
-            const errorEl = document.getElementById('email-error');
-            const successEl = document.getElementById('email-success');
-
-            if (!email) {
-                mostrarErrorContacto('email-error', 'El correo es requerido');
-                if (successEl) successEl.classList.remove('show');
-                this.classList.remove('valid');
-                this.classList.add('error');
-                return;
-            }
-
-            if (!validarEmail(email)) {
-                mostrarErrorContacto('email-error', 'Correo inválido. Usa formato: ejemplo@dominio.com');
-                if (successEl) successEl.classList.remove('show');
-                this.classList.remove('error');
-                this.classList.remove('valid');
-                return;
-            }
-
-            limpiarErrorContacto('email-error');
-            if (successEl) {
-                successEl.textContent = '✓ Correo válido';
-                successEl.classList.add('show');
-            }
-            this.classList.remove('error');
-            this.classList.add('valid');
-        });
-
-        emailInput.addEventListener('input', function () {
-            if (this.value.trim() && validarEmail(this.value.trim())) {
-                limpiarErrorContacto('email-error');
-                this.classList.remove('error');
-            }
-        });
-
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const username = usernameInput.value.trim();
-            const email = emailInput.value.trim();
-            const message = messageInput.value.trim();
-
-            let isValid = true;
-
-            if (!username) {
-                mostrarErrorContacto('username-error', 'El nombre es requerido');
-                usernameInput.classList.add('error');
-                isValid = false;
-            } else {
-                limpiarErrorContacto('username-error');
-                usernameInput.classList.remove('error');
-            }
-
-            if (!email) {
-                mostrarErrorContacto('email-error', 'El correo es requerido');
-                emailInput.classList.add('error');
-                isValid = false;
-            } else if (!validarEmail(email)) {
-                mostrarErrorContacto('email-error', 'Correo inválido. Usa formato: ejemplo@dominio.com');
-                emailInput.classList.add('error');
-                isValid = false;
-            } else {
-                limpiarErrorContacto('email-error');
-                emailInput.classList.remove('error');
-            }
-
-            if (!message) {
-                mostrarErrorContacto('message-error', 'El mensaje es requerido');
-                messageInput.classList.add('error');
-                isValid = false;
-            } else {
-                limpiarErrorContacto('message-error');
-                messageInput.classList.remove('error');
-            }
-
-            if (!isValid) return;
-
-            localStorage.setItem('username', username);
-            localStorage.setItem('email', email);
-            window.location.href = 'espartano.html';
-        });
-    }
-
     function iniciarCarrusel() {
         const carousel = document.querySelector('.carousel');
         if (!carousel) return;
@@ -360,7 +254,6 @@
     document.addEventListener('DOMContentLoaded', function () {
         iniciarSaludo();
         iniciarFormulariosLogin();
-        iniciarFormularioContacto();
         iniciarCarrusel();
         iniciarNavegacionSuave();
     });
